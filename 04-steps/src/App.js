@@ -1,3 +1,4 @@
+import "./App.css";
 import { useState } from "react";
 
 const messages = [
@@ -19,29 +20,24 @@ function Steps() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
-  // const [test, setTest] = useState({ name: "Jonas" });
-
   function handlePrevious() {
-    if (step > 1) setStep((s) => s - 1);
+    if (step > 1) setStep((prev) => prev - 1);
   }
-
   function handleNext() {
     if (step < 3) {
-      setStep((s) => s + 1);
+      setStep((prev) => prev + 1);
       // setStep((s) => s + 1);
     }
-
-    // BAD PRACTICE
-    // test.name = "Fred";
-    // setTest({ name: "Fred" });
+  }
+  function handleClick() {
+    setIsOpen((prev) => !prev);
   }
 
   return (
     <div>
-      <button className="close" onClick={() => setIsOpen((is) => !is)}>
+      <button className="close" onClick={handleClick}>
         &times;
       </button>
-
       {isOpen && (
         <div className="steps">
           <div className="numbers">
@@ -51,10 +47,8 @@ function Steps() {
           </div>
 
           <p className="message">
-            Step {step}: {messages[step - 1]}
-            {/* {test.name} */}
+            Step {step}:{messages[step - 1]}
           </p>
-
           <div className="buttons">
             <button
               style={{ backgroundColor: "#7950f2", color: "#fff" }}
