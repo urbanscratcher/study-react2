@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Item from "./Item";
+import { Item } from "./Item";
 
-export default function PackingList({
+export function PackingList({
   items,
   onDeleteItem,
   onToggleItem,
@@ -12,26 +12,23 @@ export default function PackingList({
   let sortedItems;
 
   if (sortBy === "input") sortedItems = items;
-
   if (sortBy === "description")
     sortedItems = items
       .slice()
       .sort((a, b) => a.description.localeCompare(b.description));
 
   if (sortBy === "packed")
-    sortedItems = items
-      .slice()
-      .sort((a, b) => Number(a.packed) - Number(b.packed));
+    sortedItems = items.slice().sort((a, b) => +a.packed - +b.packed);
 
   return (
     <div className="list">
       <ul>
-        {sortedItems.map((item) => (
+        {sortedItems.map((i) => (
           <Item
-            item={item}
+            item={i}
+            key={i.id}
             onDeleteItem={onDeleteItem}
             onToggleItem={onToggleItem}
-            key={item.id}
           />
         ))}
       </ul>

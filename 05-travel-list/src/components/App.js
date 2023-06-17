@@ -1,11 +1,17 @@
 import { useState } from "react";
 import Logo from "./Logo";
 import Form from "./Form";
-import PackingList from "./PackingList";
-import Stats from "./Stats";
+import { PackingList } from "./PackingList";
+import { Stats } from "./Stats";
+
+const initialItems = [
+  { id: 1, description: "Passports", quantity: 2, packed: false },
+  { id: 2, description: "Socks", quantity: 12, packed: false },
+  { id: 3, description: "Chargers", quantity: 3, packed: false },
+];
 
 export default function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(initialItems);
 
   function handleAddItems(item) {
     setItems((items) => [...items, item]);
@@ -17,9 +23,7 @@ export default function App() {
 
   function handleToggleItem(id) {
     setItems((items) =>
-      items.map((item) =>
-        item.id === id ? { ...item, packed: !item.packed } : item
-      )
+      items.map((i) => (i.id === id ? { ...i, packed: !i.packed } : i))
     );
   }
 
@@ -27,7 +31,6 @@ export default function App() {
     const confirmed = window.confirm(
       "Are you sure you want to delete all items?"
     );
-
     if (confirmed) setItems([]);
   }
 
