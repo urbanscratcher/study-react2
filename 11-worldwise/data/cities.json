@@ -13,18 +13,6 @@
       "id": 73930385
     },
     {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
-    },
-    {
       "cityName": "Berlin",
       "country": "Germany",
       "emoji": "🇩🇪",
@@ -37,16 +25,28 @@
       "id": 98443197
     },
     {
-      "cityName": "Barcelona",
-      "country": "Spain",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "cityName": "Le Castera",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-06-18T18:44:27.910Z",
+      "notes": "",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
+        "lat": "43.667871610117494",
+        "lng": "1.1755371093750002"
       },
-      "id": 98443195
+      "id": 98443201
+    },
+    {
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-06-18T18:58:52.370Z",
+      "notes": "",
+      "position": {
+        "lat": "39.9906678177503",
+        "lng": "-0.0005149841308593751"
+      },
+      "id": 98443202
     }
   ]
 }
