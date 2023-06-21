@@ -10,17 +10,16 @@ import {
 import OrderItem from './OrderItem';
 import { useFetcher } from 'react-router-dom';
 import { useEffect } from 'react';
+import UpdateOrder from './UpdateOrder';
 
 function Order() {
   const order = useLoaderData();
   const fetcher = useFetcher();
 
-  // when the first page loads
+  // when the first page loads (to load ingredients)
   useEffect(()=>{
     if(!fetcher.data && fetcher.state === 'idle') fetcher.load('/menu');
   }, [fetcher]);
-
- 
 
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
 
@@ -86,12 +85,13 @@ function Order() {
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
+      {!priority && <UpdateOrder order={order} />}
     </div>
   );
 }
 
 export async function loader({ params }) {
-  // useParams (not working in a regular function. only works in a component)
+  // useParams not working in a regular function. only works in a component
   const order = await getOrder(params.orderId);
   return order;
 }
