@@ -51,7 +51,7 @@ const Button = styled.button`
   }
 `;
 
-function Modal({ children, onClose }) {
+function ModalV1({ children, onClose }) {
   return createPortal(
     <Overlay>
       <StyledModal>
@@ -65,4 +65,4 @@ function Modal({ children, onClose }) {
   );
 }
 
-export default Modal;
+export default ModalV1;
