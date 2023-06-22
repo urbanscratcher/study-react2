@@ -11,6 +11,7 @@ import NewUsers from "./pages/Users";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import AppLayout from "./ui/AppLayout";
 import { Toaster } from "react-hot-toast";
+import Settings from "./pages/Settings";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,7 +35,7 @@ function App() {
             <Route path="bookings" element={<Bookings />} />
             <Route path="cabins" element={<Cabins />} />
             <Route path="users" element={<NewUsers />} />
-            <Route path="settings" element={<Dashboard />} />
+            <Route path="settings" element={<Settings />} />
             <Route path="account" element={<Account />} />
           </Route>
           <Route path="login" element={<Login />} />
