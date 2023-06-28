@@ -4,6 +4,7 @@ import Heading from "../../ui/Heading";
 import Row from "../../ui/Row";
 import { useTodayActivity } from "./useTodayActivity";
 import TodayItem from "./TodayItem";
+import Spinner from "../../ui/Spinner";
 
 const StyledToday = styled.div`
   /* Box */
@@ -58,7 +59,7 @@ function TodayActivity() {
           <NoActivity>No Activity today...</NoActivity>
         )
       ) : (
-        <spinner />
+        <Spinner />
       )}
     </StyledToday>
   );
