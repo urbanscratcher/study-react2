@@ -1,10 +1,9 @@
 # 리액트 공부
 - 나의 구세주 Jonas의 Udemy 리액트 강의를 들으며 작성한 코드
-- 강의 노트를 작성하며 모르는 부분은 다시 이해하며 채워넣고 있다
+- 노트를 작성하며 모르는 부분은 다시 이해하며 채워넣고 있다
 - https://www.udemy.com/course/the-ultimate-react-course/learn/lecture/37351184?start=45#overview
 
-# 요약 & 정리
-# React
+# 리액트 요약 & 정리
 
 - 프론트엔드 라이브러리/프레임워크 이용하는 이유
     - SSR (w/ word press / jquery) → CSR (SPA) (w/ API)
