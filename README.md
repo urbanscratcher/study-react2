@@ -420,16 +420,9 @@
     - Only for libraries
         - useSyncExternalStore, useInsertionEffect
 - 훅의 규칙
-    
-    ![스크린샷 2023-04-16 오전 1.05.38.png](React%20b62589a2604845bb9733fb9d3e5d93c8/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-16_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_1.05.38.png)
-    
+        
     1. Only call hooks at the **top level**
-        - Hooks rely on call order
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2028.png)
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2029.png)
-            
+        - Hooks rely on call order            
         - Do NOT allow hooks inside coniditionals, loops, nested functions, or after an early return
         - This is necessary to ensure that hooks are always called **in the same order** (hooks rely on this)
     2. Only call hooks from React functions
