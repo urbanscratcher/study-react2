@@ -13,14 +13,8 @@
         - piece of data = piece of state
         - too many DOM manipulation and traversing → Spaghetti code
         - Data (stat) is usually stored in the DOM, shared across entire app → Hard to reason + bugs
-    - 써드파티 라이브러리
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled.png)
-        
-    - 프레임워크
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%201.png)
-        
+    - 써드파티 라이브러리        
+    - 프레임워크        
 - 리액트란
     - Extremely popular declarative, component-based state-driven JS library for building user interactions, created by facebook
         - Based on components
@@ -33,18 +27,12 @@
             - Declarative: telling React what a component should look like, based on current data/state
             - React is abstraction away from DOM: we never touch the DOM
             - JSX: a syntax that combines HTML, CSS, JS, referencing other components
-        - State-driven
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%202.png)
-            
+        - State-driven            
         - JS library
             - It’s a library because React is only the “view” layer. We need to pick multiple external libraries to build a complete app.
             - Nextjs, Remix → complete frameworks built on top of React
 - 기본 리액트 프로젝트 생성법
-    - Vite
-        
-        [Vite React 프로젝트 생성법](https://www.notion.so/Vite-React-1cc3746f9fbc44deb5d962cfdb33ed0a?pvs=21)
-        
+    - Vite        
         - Modern build tool that contains a template for setting up React applications
         - ESLint 등을 수동으로 설정해야 함
         - HMR(Hot Module Replacement) & 번들링이 매우 빠름
@@ -147,60 +135,26 @@
         2. 렌더 단계: 리액트는 컴포넌트 함수들을 콜, 어떻게 DOM이 업데이트 될 지 파악(reconciliation)
         3. 커밋 단계: 리액트가 실제로 DOM에 엘레먼트를 삽입, 업데이트, 삭제
         4. 브라우저가 그림
-        - 렌더 단계 + 커밋 단계 = 렌더링
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%203.png)
-            
+        - 렌더 단계 + 커밋 단계 = 렌더링            
         - 리액트에서 렌더링은 DOM을 업데이트하거나 스크린에 엘레먼트를 표시하는 게 아님
         - 렌터링은 리액트 내부에서만 일어나고, 실질적인 시각적 변화를 일으키지 않음
     - 렌더가 트리거되는 법
         - 앱의 초기 렌더링
         - 1개 이상의 인스턴스에서 상태가 업데이트 될 때 (재렌더링)
-            - 렌더들은 즉각적으로 트리거 되지 않음. JS 엔진이 시간이 날 때 스케줄링이 됨. 이벤트 핸들러에서 다량의 setState 콜을 배치하기도 함.
-                
-                ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%204.png)
-                
-    - 가상 DOM (React Element Tree)
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%205.png)
-        
-    - What is Reconciliation and Why do we need it?
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%206.png)
-        
-    - The reconciler: FIBER → Engine of React!
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%207.png)
-        
-    - Reconciliation in Action
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%208.png)
-        
+            - 렌더들은 즉각적으로 트리거 되지 않음. JS 엔진이 시간이 날 때 스케줄링이 됨. 이벤트 핸들러에서 다량의 setState 콜을 배치하기도 함.                
+    - 가상 DOM (React Element Tree)        
+    - What is Reconciliation and Why do we need it?        
+    - The reconciler: FIBER → Engine of React!        
+    - Reconciliation in Action        
     - 렌더 단계
         - 컴포넌트 인스턴스가 리렌더링 트리거 → 리액트 엘레먼트
         → 새로운 가상 DOM과 현재 Fiber 트리
         → Reconciliation(Fiber) + Diffing
         → Fiber 트리 업데이트
-        → DOM 리스트 업데이트
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%209.png)
-            
-    - 커밋 단계 + 브라우저 그림
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2010.png)
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2011.png)
-        
+        → DOM 리스트 업데이트            
+    - 커밋 단계 + 브라우저 
     - 정리
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2012.png)
-        
-- How Diffing Works
-    
-    ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2013.png)
-    
-    ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2014.png)
-    
+- How Diffing Works (생략)    
 - Key Props
     - 어떤 엘레먼트가 unique하다는 것을 diffing 알고리즘에 알려주는 특별한 prop
     - 리액트가 같은 컴포넌트 유형의 인스턴스들을 구별할 수 있게 함
@@ -210,32 +164,8 @@
         - 상태 리셋에 키 사용
 - 상태 업데이트가 배치되는 방법
     - Renders are not triggered immediately, but **scheduled** for when the JS engine has some “free time”. There is also **batching of multiple setState calls** in event handlers
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2015.png)
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2016.png)
-        
     - Updating State is Asynchronous
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2017.png)
-        
-    - Batching beyond event handler functions
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2018.png)
-        
-- 이벤트 작동 방식
-    - in JS
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2019.png)
-        
-    - in React
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2020.png)
-        
-    - Synthetic Events
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2021.png)
-        
+    - Batching beyond event handler functions                
 - 컴포넌트 컴포지션
     - Wrapper 컴포넌트
         - children props 이용해 컴포넌트 내에서 컴포넌트 활용 가능
@@ -264,8 +194,6 @@
         - =Dumb components
         - =Presentational Components
 - 컴포넌트 (인스턴스) 라이프사이클
-    
-    ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2022.png)
     
 - 상태(State)
     - **변수가 바뀔 때 re-evaluate 후 re-render 하기 위해 도입된 개념**
@@ -298,15 +226,10 @@
             - what types of state are necessary
             - where to place each piece of state
             - how data flows through the app
-        - State: when and where?
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2023.png)
-            
+        - State: when and where?            
         - Deriving State
             - State that is computed from an existing piece of state or from props
     - 상태 만들기 및 업데이트
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2024.png)
         
 - Children Prop
     - Allow us to pass JSX into an element (besides regular props)
@@ -519,36 +442,15 @@
         useEffect( sideEffectFn(), [ dependencies ]);
         ```
         
-    - Dependency Array
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2030.png)
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2031.png)
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2032.png)
-        
+    - Dependency Array        
         - Dependency Array 룰
-            - dependencies에 추가하지 않아도 되는 것
-                
-                ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2033.png)
-                
+            - dependencies에 추가하지 않아도 되는 것                
                 - 상태 업데이트 함수 (setFn. 리액트는 해당 함수가 절대 변경되지 않도록 보장)
                 - 내장 API (fetch, localStorage…)
                 - 컴포넌트와 관련이 없는 변수나 함수
-            - dependencies에 추가해야 하는 것
-                
-                ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2034.png)
-                
+            - dependencies에 추가해야 하는 것                
                 - 이펙트 함수 상에서 컴포넌트가 재렌더링 되면 변경될 수 있는 모든 것들
                 - 컴포넌트 함수에 정의된 변수, 상태, props, 함수 등
-    - Effect는 언제 실행되는가?
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2035.png)
-        
-    - 되도록이면 사용하지 않기
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2036.png)
-        
     - 브라우저 저장
         - localStorage에 저장된 로그인 여부를 컨트롤하기 위함
         - useEffect 사용하면 최초 1번만 실행되도록 할 수 있음 ( dependencies는 비우기 [ ])
@@ -575,10 +477,7 @@
           }, [enteredEmail, enteredPassword]);
         ```
         
-    - 클린업 함수
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2037.png)
-        
+    - 클린업 함수 
         - Debouncing: 유저 인풋을 기다린 후 평가
         
         ```jsx
@@ -640,10 +539,7 @@
         - **Selecting and storing DOM elements**
     - Refs are for data that is NOT rendered: usually only appear in event handlers or effects, not in JSX (otherwise use state)
     - Do NOT read write or read .current in render logic (like state)
-    - State vs. Refs
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2038.png)
-        
+    - State vs. Refs        
     - Example
         - ❌
             
@@ -690,16 +586,10 @@
     - 컴포넌트 위계를 변화시키지 않고도 상태 변화가 있는 로직을 재사용할 수 있게 함
     - Reusing logic with custom hooks
         
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2039.png)
-        
         - use로 시작하는 함수를 만들어야 함
         - **커스텀 훅을 사용하는 컴포넌트는 상태나 효과를 공유받는 게 아니라 커스텀 훅에서 독립적으로 만들어진 상태 인스턴스를 갖게 됨**
         - 컴포넌트 간에 재사용하고 싶은, 반복되는 로직을 하나로 묶어 재사용하기 위함
-        - 컴포넌트 트리를 통해 전달되어 생성하는 것이 아니라, 각 컴포넌트에서 독립적으로 state를 생성.
-    - 커스텀 훅 예시
-        
-        [https://www.youtube.com/watch?v=0c6znExIqRw&list=PLZlA0Gpn_vH-aEDXnaFNLsqiJWFpIWV03](https://www.youtube.com/watch?v=0c6znExIqRw&list=PLZlA0Gpn_vH-aEDXnaFNLsqiJWFpIWV03)
-        
+        - 컴포넌트 트리를 통해 전달되어 생성하는 것이 아니라, 각 컴포넌트에서 독립적으로 state를 생성.     
     - useHttp
         
         ```jsx
@@ -781,14 +671,8 @@
             - Action: 어떻게 업데이트를 할 지
             - Reducer: 업데이트를 실제로 하는 것
             - State: 업데이트돼야 할 것
-            - Dispatch(Action) → Reducer(State, Action) → 업데이트 완료
-    - A mental model
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2040.png)
-        
+            - Dispatch(Action) → Reducer(State, Action) → 업데이트 완료        
     - **복잡한 상태 관리가 필요할 때 사용 (상태 N개) → 상태 업데이트의 중앙 관리화(centralize)**
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2041.png)
         
         ```jsx
         const [state, dispatchFn]
@@ -800,14 +684,8 @@
         - reducerFn : 액션이 보내지면 자동으로 트리거되는 함수
             - (prevState, action) ⇒ newState
         - initFn : 초기 상태를 프로그래밍적으로 설정하는 함수
-    - How Reducers update state
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2042.png)
-        
-    - useState vs. useReducer
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2043.png)
-        
+    - How Reducers update state        
+    - useState vs. useReducer        
         - useState vs. useReducer
             - useState( )
                 - 주요 상태 관리 도구
@@ -817,8 +695,6 @@
                 - 복잡한 상태 관리가 필요할 때
                 - 관련된 상태들이나 데이터들을 관리할 때
     - When to use useReducer?
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2044.png)
         
     - 리듀서 함수는 state를 새 state로 덮어씀
         - 사이드이펙트를 피하기 위해 기존 상태를 mutate하지 않고 언제나 overwrite해야 함
@@ -889,19 +765,10 @@
             
 - context API
     - 다양한 컴포넌트 간 상태를 공유하기 위함
-    - 문제: Prop Drilling
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2045.png)
-        
-    - 컨텍스트 API란?
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2046.png)
-        
+    - 문제: Prop Drilling        
+    - 컨텍스트 API란?        
         - props 포워딩 많아져서 props chain이 복잡해질 때 상태 저장소가 필요
         - 컨텍스트가 바뀔 때마다 comsume하는 컴포넌트를 재평가함
-            
-            ![스크린샷 2023-04-16 오전 12.27.18.png](React%20b62589a2604845bb9733fb9d3e5d93c8/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-16_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_12.27.18.png)
-            
             ```jsx
             // App.js
             return (
@@ -1066,19 +933,7 @@
         }
         ```
         
-- 상태관리
-    - 상태 관리
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2047.png)
-        
-    - State Placement Options
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2048.png)
-        
-    - State Management Options
-        
-        ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2049.png)
-        
+- 상태관리        
 - useImperatvieHandle( )
     - 일반적으로 사용하지는 않으며 되도록이면 사용을 피하자 (스크롤링 등 특정 상황에서만 유용)
     - 리액트 컴포넌트에서 온 기능이나 값을 노출해 부모 컴포넌트에 연결한 후, 부모 컴포넌트 안에서 참조를 통해 그 컴포넌트를 사용하고, 기능을 트리거 할 수 있음
@@ -1117,9 +972,6 @@
     ```
     
 - URL for 상태관리
-    
-    ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2050.png)
-    
 - 리액트 애플리케이션을 만드는 과정
     - 계획 & 과정
         1. Gather application requirements and features
@@ -1132,17 +984,8 @@
         4. Decide on what libraries to use (technology decisions)
     - 상세 과정
         1. Project Requirements from the business
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2051.png)
-            
         2. Features + Pages
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2052.png)
-            
-        3. State Management + Technology Decisions
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2053.png)
-            
+        3. State Management + Technology Decisions           
        
 
 - 폴더 구조 (예시)
@@ -1170,14 +1013,8 @@
 - 날짜 라이브러리 (date-fns)
 - 리액트 라우터 (react-router-dom + @types)
     - 라우팅 개념
-        - 클라이언트 사이드 라우팅
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2055.png)
-            
-        - SPA
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2056.png)
-            
+        - 클라이언트 사이드 라우팅            
+        - SPA            
     - 기본 리액트 라우터 (react-router-dom)
         - Example
             
@@ -2072,55 +1909,6 @@
         });
         
         ```
-        
-    - Component Design Patterns
-        - 컨테이너 컴포넌트 패턴
-            
-            children 프롭을 전달하는 컨테이너 컴포넌트 활용
-            
-            데이터 핸들링과 비즈니스 로직을 위한 컨테이너 컴포넌트(Smart 컴포넌트)와 UI 엘레먼트 렌더링을 위한 프레젠테이셔널 컴포넌트(Dumb 컴포넌트) 분리
-            
-            - **로더** - 컨테이너는 특정 조건이 true인 동안 로더를 표시하고, 그렇지 않으면 콘텐츠를 렌더링합니다.
-            - **인증 게이트** - 사용자가 인증되지 않은 경우 컨테이너는 자식을 렌더링하지 않습니다.
-            - **레이아웃 및 스타일 제공 (플레이스홀더)** - 컨테이너는 일관된 스타일을 제공하는 래퍼 역할을 합니다. 콘텐츠가 다른 여러 대시보드 페이지 컴포넌트가 있고, 각 페이지에 동일한 레이아웃을 제공하고 싶을 때 사용합니다.
-        - 렌더 프롭 패턴
-            
-            프롭으로 JSX를 리턴하는 함수를 넘겨 컴포넌트 간에 코드와 데이터 공유
-            
-            [훅으로 대체할 수 있지만, 선택적 렌더링이 필요할 때 여전하 유효한 패턴](https://itchallenger.tistory.com/m/559)
-            
-            [렌더 프롭 패턴의 대안?](https://gist.github.com/bradwestfall/4fa683c8f4fcd781a38a8d623bec20e7)
-            
-        - 고차 컴포넌트 패턴(HOC)
-            
-            기능을 추가하거나 기존 컴포넌트의 행위를 수정하기 위해 HOC 사용
-            
-        - 프로바이더 패턴
-            
-            많은 컴포넌트에 프롭 드릴링 없이 데이터와 스테이트를 제공하기 위해 리액트 컨텍스트API 활용
-            
-        - 컴파운드 컴포넌트 패턴
-            
-            UI 엘레먼트 만들 때 일반적으로 사용
-            
-            • API 복잡성 감소: 하나의 거대한 부모 컴포넌트에 모든 props를 집어넣고 하위 UI 컴포넌트로 향해 내려가는 대신, 각 prop는 가장 적합한 SubComponent에 연결되어 있습니다.
-            
-            • 유연한 마크업 구조: 컴포넌트의 UI가 매우 뛰어난 유연성을 가지고 있고 하나의 컴포넌트로부터 다양한 케이스를 생성할 수 있습니다. 예를 들어, 사용자는 SubComponent의 순서를 변경하거나 이 중에서 무엇을 표시할지 정할 수 있습니다.
-            
-            • 관심사의 분리: 대부분의 로직은 기본 Counter 컴포넌트에 포함되며, React.Context는 모든 자식 컴포넌트의 states와 handlers를 공유하는 데 사용됩니다. 따라서 책임 소재를 명확히 분리할 수 있습니다..
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2057.png)
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2058.png)
-            
-            ![Untitled](React%20b62589a2604845bb9733fb9d3e5d93c8/Untitled%2059.png)
-            
-            - 너무 높은 UI의 유연성: 유연성이 높다는 것은 예기치 않은 동작을 유발할 가능성이 크다는 것을 의미합니다. 예를 들어, 필요 없는 자식 컴포넌트가 존재하거나, 자식 컴포넌트의 순서가 잘못되어 있을 수 있고, 꼭 필요한 자식 컴포넌트가 없을 수도 있습니다.사용자가 컴포넌트를 어떻게 사용하기를 원하는지에 따라, 유연성을 어느 정도 제한하고 싶을 수도 있습니다.
-            - 너무 무거운 JSX: 이 패턴을 적용하면 JSX 행 수가 증가하며, 특히 EsLint와 같은 린터나 Prettier와 같은 코드 포맷터를 사용하는 경우 더욱 심각해집니다.단일 컴포넌트 수준에서는 큰 문제가 아니지만, 규모가 커질수록 그 차이가 확연하게 드러납니다.
-        
-        [5가지 최신 고급 리액트 패턴 - ① Compound Component, Control Props, Custom Hook](https://wishket.tistory.com/m/12)
-        
-        [5가지 최신 고급 리액트 패턴 - ② Props Getters, State reducer](https://wishket.tistory.com/m/entry/5가지-최신-고급-리액트-패턴-②-Props-Getters-State-reducer)
         
     - Debounce and Throttle Event Handlers
         - 업데이트가 잦은 이벤트를 다룰 때(스크롤, 리사이즈), 디바운스나 쓰로틀링을 스용해 성능 최적화
